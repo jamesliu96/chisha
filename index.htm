@@ -1,0 +1,107 @@
+<!doctype html>
+<html ng-app="c">
+<head>
+  <meta charset="utf-8">
+  <title>吃啥 - 选择性综合症患者必备 Alpha</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+  <style type="text/css" media="all">
+    body {
+      margin: 10px;
+      font: 20px "黑体", monospace, Courier, sans-serif;
+      background-color: #ffa648;
+    }
+    td {
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      background-color: #ff7012;
+      border-radius: 2px;
+      color: #000;
+    }
+    #foodlist {
+      margin: 5px 5px 5px 5px;
+      border: 1px solid #bb5e00;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    #option, #choose {
+      font-size: 28px;
+    }
+    #food {
+      font-size: 36px;
+    }
+    #choice {
+      padding: 20px;
+      font-size: 50px;
+    }
+    #choose {
+      width: 120px;
+      height: 36px;
+      font-size: 24px;
+      background-color: #ff5809;
+      border: 0;
+      border-radius: 16px;
+      margin: 20px 0 0 0;
+      cursor: pointer;
+    }
+    .heart::after {
+      content: "❤";
+      padding: 10px;
+    }
+    #copyright {
+      margin-bottom: 10px;
+      margin-top: 40px;
+      font: bold 8px Verdana, Arial, monospace, Courier, sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  </style>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript">
+  var foodstring = "吉野家|快餐/米饭,麦当劳|快餐/汉堡,必胜客|快餐/比萨,真功夫|快餐/米饭,苏氏牛肉面|快餐/拉面,禾绿寿司|日式料理/寿司,康师傅|快餐/拉面,味千拉面|日式料理/拉面,屎|n/a";
+  var foodlist = foodstring.split(",");
+  for(var i in foodlist) {
+    var t = foodlist[i].split("|");
+    foodlist[i] = {"name": t[0], "type": t[1]};
+  }
+  var $ = function(id) { return document.getElementById(id); };
+  var app = angular.module("c", []);
+  app.controller("c_ctrl", function($scope) {
+    $scope.foodlist = foodlist;
+    $scope.choose = function() {
+      $scope.chosen = $scope.foodlist[Math.floor(Math.random()*($scope.foodlist.length))].name;
+    };
+    $scope.choose();
+  });
+  </script>
+</head>
+<body ng-controller="c_ctrl">
+<center>
+  <input type="button" id="choose" value="随机选择" ng-click="choose()" />
+  <h1 id="food">今儿咱还是吃<br><span id="choice">{{chosen}}</span><br>吧<span class="heart"></span></h1>
+  <h1 id="option"><i>可选列表</i></h1>
+  <table id="foodlist" border="1" cellspacing="0" cellpadding="3">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>类型</th>
+      </tr>
+    <tbody>
+      <tr ng-repeat="food in foodlist">
+        <td>{{food.name}}</td>
+        <td>{{food.type}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>总数</th>
+        <th>{{foodlist.length}}</th>
+      </tr>
+    </tfoot>
+  </table>
+  <div id="copyright">Copyright © 2014 <a href="http://g.jamesliu.info" target="_blank">James Liu</a></div>
+</center>
+</body>
+</html>
