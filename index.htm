@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="c">
+<head>
+  <meta charset="utf-8">
+  <title>吃啥 - 选择性综合症患者必备 Beta</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</head>
+<body ng-controller="c_ctrl">
+<center>
+  <input type="button" id="choose" value="随机选择" ng-click="choose()" />
+  <h1 id="food">今儿咱还是吃<br><span id="choice">{{chosen}}</span><br>吧<br><span class="heart"></span></h1>
+  <h1 id="option"><i>可选列表</i></h1>
+  <table id="foodlist" border="1" cellspacing="0" cellpadding="3">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>类型</th>
+        <th>操作</th>
+      </tr>
+    <tbody>
+      <tr ng-repeat="food in foodlist">
+        <td>{{food.name}}</td>
+        <td>{{food.type}}</td>
+        <td><input type="submit" class="o" value="删除" id="{{food.$$hashKey}}" ng-click="del($event)" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="name" class="t" placeholder="名称" ng-model="name" /></td>
+        <td><input type="text" id="type" class="t" placeholder="类型" ng-model="type" /></td>
+        <td><input type="submit" class="o" value="添加" ng-click="add()" /></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>总数</th>
+        <th colspan="2">{{foodlist.length}}</th>
+      </tr>
+    </tfoot>
+  </table>
+  <div id="copyright">Copyright © 2014 <a href="http://g.jamesliu.info" target="_blank">James Liu</a></div>
+</center>
+</body>
+</html>
