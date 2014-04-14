@@ -14,7 +14,7 @@
   <input type="button" id="choose" value="随机选择" ng-click="choose()" />
   <h1 id="food">今儿咱还是吃<br><span id="choice">{{chosen}}</span><br>吧<br><span class="heart"></span></h1>
   <h1 id="option"><i>可选列表</i></h1>
-  <table id="foodlist" border="1" cellspacing="0" cellpadding="3">
+  <table id="foodlist" border="1" cellspacing="0" cellpadding="1">
     <thead>
       <tr>
         <th>名称</th>
@@ -28,8 +28,8 @@
         <td><input type="submit" class="o" value="删除" id="{{food.$$hashKey}}" ng-click="del($event)" /></td>
       </tr>
       <tr>
-        <td><input type="text" id="name" class="t" placeholder="名称" ng-model="name" /></td>
-        <td><input type="text" id="type" class="t" placeholder="类型" ng-model="type" /></td>
+        <td><input type="text" id="name" class="t" placeholder="名称" ng-model="name" onfocus="style.backgroundColor='#ff0'" onblur="style.backgroundColor='#fff'" /></td>
+        <td><input type="text" id="type" class="t" placeholder="类型" ng-model="type" onfocus="style.backgroundColor='#ff0'" onblur="style.backgroundColor='#fff'" /></td>
         <td><input type="submit" class="o" value="添加" ng-click="add()" /></td>
       </tr>
     </tbody>
