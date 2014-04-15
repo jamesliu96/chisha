@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  font: 20px "黑体", monospace, Courier, sans-serif;
+  font: 20px "黑体", Verdana, Arial, monospace, Courier, sans-serif;
   background-color: #ffa648;
 }
 td {
@@ -32,18 +32,19 @@ a {
 #food {
   font-size: 36px;
 }
+#change {
+  padding: 10px;
+  font-size: 16px;
+}
 #choice {
   padding: 20px;
   font-size: 50px;
 }
 #choose {
-  width: 150px;
-  height: 36px;
-  font-size: 24px;
+  font-size: 32px;
   background-color: #ff5809;
-  border: 0;
-  border-radius: 18px;
-  margin: 20px 0 0 0;
+  padding: 10px;
+  border-radius: 15px;
   cursor: pointer;
 }
 .heart::after {

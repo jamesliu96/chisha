@@ -1,4 +1,36 @@
-var foodstring = "吉野家|快餐/米饭,麦当劳|快餐/汉堡,必胜客|快餐/比萨,真功夫|快餐/米饭,苏氏牛肉面|快餐/拉面,禾绿寿司|日式料理/寿司,康师傅|快餐/拉面,味千拉面|日式料理/拉面";
+var foodstring = "吉野家|快餐/米饭,麦当劳|快餐/汉堡,KFC|Hamberger,必胜客|快餐/比萨,真功夫|快餐/米饭,李先生|快餐/拉面,禾绿寿司|日式料理/寿司,康师傅|快餐/拉面,味千拉面|Ramen";
+var dict_cn = {
+  "lang": "cn",
+  "title": "吃啥 - 选择性综合症患者必备",
+  "version": "Beta",
+  "choose": "随机选择",
+  "change": "English",
+  "s1": "今儿咱还是吃",
+  "s2": "吧",
+  "list": "可选列表",
+  "name": "名称",
+  "type": "类型",
+  "oper": "操作",
+  "add": "添加",
+  "del": "删除",
+  "total": "总数"
+};
+var dict_en = {
+  "lang": "en",
+  "title": "Chisha - Decide what to eat for you",
+  "version": "Beta",
+  "choose": "CHOOSE",
+  "change": "中文",
+  "s1": "Let's eat",
+  "s2": "today",
+  "list": "Available",
+  "name": "Name",
+  "type": "Type",
+  "oper": "Modify",
+  "add": "Add",
+  "del": "Delete",
+  "total": "Total"
+};
 var store = function(d) {
   if(window.localStorage) {
     var m = [];
@@ -25,9 +57,17 @@ var get = function() {
 };
 var app = angular.module("c", []);
 app.controller("c_ctrl", function($scope) {
+  $scope.dict = dict_cn;
   $scope.init = function() {
     $scope.foodlist = get() || foodlist;
     $scope.choose();
+  };
+  $scope.change = function() {
+    if($scope.dict.lang == "cn") {
+      $scope.dict = dict_en;
+    } else {
+      $scope.dict = dict_cn;
+    }
   };
   $scope.choose = function() {
     $scope.chosen = $scope.foodlist[Math.floor(Math.random() * ($scope.foodlist.length))].name;
