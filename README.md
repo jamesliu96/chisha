@@ -1,15 +1,19 @@
-吃啥
+吃啥 Choosa Beta
 ======
 
 Overview
 ------
 
-选择性综合症/强迫症患者专用随机选择器，基于AngularJS（未完成）
+This is a tool for you if you have problems in selecting from a varies of options. Very reliable results will be generated within your own customized list. Based on AngularJS.
+
+选择性综合症/强迫症患者专用随机选择器，随意编辑的列表，可靠的结果，基于AngularJS。
 
 Usage
 ------
 
-今儿中午吃啥好呢？
+_"What should I have for lunch today?_ If you have problems in choosing things, this tool is perfectly suitable for you.
+
+今儿中午吃啥好呢？使用这个工具来决定吧！
 
 License
 ------
