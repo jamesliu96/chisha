@@ -1,6 +1,8 @@
 吃啥 Choosa Beta
 ======
 
+##Decide For You
+
 Overview
 ------
 
@@ -11,7 +13,7 @@ This is a tool for you if you have problems in selecting from a varies of option
 Usage
 ------
 
-_"What should I have for lunch today?_ If you have problems in choosing things, this tool is perfectly suitable for you.
+_"What should I have for lunch today?"_ If you have problems in choosing things, this tool is perfectly suitable for you.
 
 今儿中午吃啥好呢？使用这个工具来决定吧！
 
