@@ -19,13 +19,13 @@
       <tr>
         <th>{{dict.name}}</th>
         <th>{{dict.type}}</th>
-        <th>{{dict.oper}}</th>
+        <th>{{dict.modify}}</th>
       </tr>
     <tbody>
       <tr ng-repeat="food in foodlist">
         <td>{{food.name}}</td>
         <td>{{food.type}}</td>
-        <td><input type="submit" class="o" value="{{dict.del}}" id="{{food.$$hashKey}}" ng-click="del($event)" /></td>
+        <td><input type="submit" class="o" value="{{dict.delete}}" id="{{food.$$hashKey}}" ng-click="del($event)" /></td>
       </tr>
       <tr>
         <td><input type="text" id="name" class="t" placeholder="{{dict.name}}" ng-model="name" onfocus="style.backgroundColor='#ff0'" onblur="style.backgroundColor='#fff'" /></td>
@@ -40,7 +40,7 @@
       </tr>
     </tfoot>
   </table>
-  <div id="copyright"><a id="change" href="javascript:void(0)" ng-click="change()">{{dict.change}}</a><br><br><br>Copyright © 2014 <a href="http://g.jamesliu.info" target="_blank">James Liu</a></div>
+  <div id="footer"><a id="change" href="javascript:void(0)" ng-click="change()">{{dict.change}}</a><br><br><br>Copyright © 2014 <a href="http://g.jamesliu.info" target="_blank">James Liu</a></div>
 </center>
 </body>
 </html>

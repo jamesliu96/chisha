@@ -10,9 +10,9 @@ var dict_cn = {
   "list": "可选列表",
   "name": "名称",
   "type": "类型",
-  "oper": "操作",
+  "modify": "操作",
   "add": "添加",
-  "del": "删除",
+  "delete": "删除",
   "total": "总数"
 };
 var dict_en = {
@@ -26,9 +26,9 @@ var dict_en = {
   "list": "Available",
   "name": "Name",
   "type": "Type",
-  "oper": "Modify",
+  "modify": "Modify",
   "add": "Add",
-  "del": "Delete",
+  "delete": "Delete",
   "total": "Total"
 };
 var store = function(d) {
