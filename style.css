@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   font: 20px "黑体", Verdana, Arial, monospace, Courier, sans-serif;
+  color: #000;
   background-color: #ffa648;
 }
 td {
@@ -11,6 +12,7 @@ a {
   background-color: #ff7012;
   border-radius: 2px;
   color: #000;
+  cursor: pointer;
 }
 .t {
   text-align: center;
@@ -18,8 +20,9 @@ a {
 }
 .o {
   border: 0;
-  background-color: #ff5809;
+  background-color: #ff7012;
   font-size: 10px;
+  cursor: pointer;
 }
 #foodlist {
   margin: 5px 5px 5px 5px;
@@ -46,7 +49,6 @@ a {
   background-color: #ff5809;
   padding: 10px;
   border-radius: 15px;
-  cursor: pointer;
 }
 .heart::after {
   content: "❤";
