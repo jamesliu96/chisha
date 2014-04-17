@@ -3,7 +3,7 @@ var dict_cn = {
   "lang": "cn",
   "title": "吃啥 - 选择性综合症患者必备",
   "version": "测试版",
-  "choose": "吃啥",
+  "choosa": "吃啥",
   "change": "English",
   "s1": "今儿咱还是吃",
   "s2": "吧",
@@ -19,7 +19,7 @@ var dict_en = {
   "lang": "en",
   "title": "Choosa - Decide for you",
   "version": "Beta",
-  "choose": "CHOOSA",
+  "choosa": "CHOOSA",
   "change": "中文",
   "s1": "Let's have",
   "s2": "today",
@@ -68,7 +68,7 @@ app.controller("c_ctrl", function($scope) {
         }
       }
     }
-    $scope.choose();
+    $scope.choosa();
   };
   $scope.change = function() {
     if($scope.dict.lang == "cn") {
@@ -79,7 +79,7 @@ app.controller("c_ctrl", function($scope) {
       window.localStorage.setItem("chisha_lang", "cn");
     }
   };
-  $scope.choose = function() {
+  $scope.choosa = function() {
     $scope.chosen = $scope.foodlist[Math.floor(Math.random() * ($scope.foodlist.length))].name;
   };
   $scope.add = function() {
